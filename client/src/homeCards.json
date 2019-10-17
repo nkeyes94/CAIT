@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "C",
+        "image": "https://i.pinimg.com/originals/f7/2d/60/f72d60a40364c73e4ca985a753b8bbc0.jpg",
+        "occupation": "Fry Cook",
+        "location": "A Pineapple Under the Sea"
+    },
+    {
+        "id": 2,
+        "name": "A",
+        "image": "https://pbs.twimg.com/profile_images/887828156886986752/F7XIdhSg.jpg",
+        "occupation": "Restaurant Owner",
+        "location": "A Giant Anchor"
+    },
+    {
+        "id": 3,
+        "name": "I",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYnQuTY3LbWD4vokAlqQtYn3VLqbmKw17L-oBD8-E2xZQDqb7B",
+        "occupation": "Cashier",
+        "location": "An Easter Island Head"
+    },
+    {
+        "id": 4,
+        "name": "T",
+        "image": "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fmichelleking%2Ffiles%2F2018%2F02%2FKate-Hudson-Headshot-Photo-Credit-Amy-Neunsinger-1200x1351.jpg",
+        "occupation": "Boy Genius",
+        "location": "A Secret Laboratory"
+    }
+]
