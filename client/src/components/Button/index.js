@@ -3,7 +3,7 @@ import React from "react";
 
 function Button(props) {
   return (
-    <button onClick={props.onClick} className={`card-btn ${props["data-value"]}`} {...props} />
+    <button onClick={props.onClick} className= {`btn btn-success ${props["data-value"]}`} {...props} />
   );
 }
 

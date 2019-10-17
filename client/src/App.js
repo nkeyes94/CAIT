@@ -8,11 +8,12 @@ import ManualLogin from "./pages/ManualLogin";
 // import Footer from "./components/Footer";
 // import Wrapper from "./components/Wrapper";
 // import ReactPlayer from 'react-player'
+import './App.css';
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className="App">
         {/* <Navbar /> */}
         <Switch>
           <Route exact path="/" component={Home} />
