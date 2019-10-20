@@ -15,6 +15,7 @@ class Home extends Component {
   render () {
     return (
       <div>
+        
       <Container fluid>
 
         <Row>     
@@ -37,12 +38,12 @@ class Home extends Component {
         <Row>
           <Col size="md-12">
             <div className="d-flex justify-content-center">
-                <Link to="/login"><a href="#" class="text-danger mt-3">Login</a></Link>   
+                <Link to="/login"><a href="#" class="text-success mt-3">Login</a></Link>   
             </div>
           </Col>
           <Col size="md-12">
             <div className="d-flex justify-content-center">
-                <Link to="/signup"><a href="#" className="text-danger mb-3">Sign Up</a></Link> 
+                <Link to="/signup"><a href="#" className="text-success mb-3">Sign Up</a></Link> 
             </div>
           </Col>
         </Row>

@@ -44,7 +44,7 @@ class SignUp extends Component {
                   <Row>
                     <div className="mx-auto p-4">
                         <Col size="md-12">    
-                          <FormBtn>Register</FormBtn>
+                        <Link className="btn btn-success"  to="/">Register</Link>
                         </Col>
                       </div>
                   </Row>

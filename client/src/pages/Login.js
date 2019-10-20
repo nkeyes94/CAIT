@@ -59,7 +59,7 @@ class Login extends Component {
                   <Row>
                     <div className="mx-auto p-4">
                         <Col size="md-12">    
-                          <FormBtn>Login</FormBtn>
+                        <Link className="btn btn-success"  to="/dashboard">Login</Link>
                         </Col>
                       </div>
                   </Row>
