@@ -8,22 +8,21 @@ mongoose.connect(
   "mongodb://localhost/heroku_tmwk490b"
 );
 
-const todoSeed = [
-  {
+const todoSeed = [{
     todoName: "Set up server",
     todoDescription: "connect client and server",
     date: new Date(Date.now())
-  },  
+  },
   {
     todoName: "set up mongodb connection",
     todoDescription: "text connection with example todo list",
     date: new Date(Date.now())
-  },  
+  },
   {
     todoName: "Deploy to heroku",
     todoDescription: "get c.a.i.t deployed",
     date: new Date(Date.now())
-  },  
+  },
 ];
 
 db.Todo

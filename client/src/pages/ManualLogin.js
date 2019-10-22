@@ -6,15 +6,15 @@ import Button from "../components/Button";
 
 class ManualLogin extends Component {
 
-  
+
   render() {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-12">     
+          <Col size="md-12">
             <Link to="/"><Button>Home</Button></Link>
           </Col>
-        
+
           <Col size="md-6">
             <h1>Sign In Manually</h1>
             <form>
@@ -28,6 +28,6 @@ class ManualLogin extends Component {
     );
   }
 }
-  
+
 
 export default ManualLogin;
