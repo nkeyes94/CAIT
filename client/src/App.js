@@ -5,16 +5,20 @@ import Home from "./pages/Home.js";
 import SignUp from "./pages/SignUp.js";
 import ManualLogin from "./pages/ManualLogin";
 import Dashboard from "./pages/Dashboard";
-// import Navbar from "./components/Navbar";
-// import Footer from "./components/Footer";
-// import Wrapper from "./components/Wrapper";
-// import ReactPlayer from 'react-player'
+import { Helmet } from 'react-helmet';
+// import component using helmet
 import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        {/* insert script file needed below */}
+        <Helmet>
+          <script src="">
+
+          </script>
+        </Helmet>
         {/* <Navbar /> */}
         <Switch>
           <Route exact path="/" component={Home} />
