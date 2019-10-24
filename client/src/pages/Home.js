@@ -5,9 +5,13 @@ import KateCard from "../components/KateCard";
 // import Wrapper from "../components/Wrapper";
 import { Col, Row, Container } from "../components/Grid";
 // import homeCards from "../homeCards.json";
-import RenderVector from '../components/VectorHead/renderVector'
+import VectorHead from '../components/VectorHead/VectorHead';
+import Head from '../components/VectorHead/Head';
 
 class Home extends Component {
+  componentDidMount() {
+    var head = new Head();
+  }
 
   // state = {
   //   homeCards
@@ -16,16 +20,11 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Container fluid>
-          <div>
-            <RenderVector/>
-          </div>
+        <div className= "vectorHeadContainer">
+          {/* <VectorHead /> */}
+        </div>
 
-
-        </Container>
-        
-
-        <Container fluid>
+          <Container fluid>
 
           <Row>
 

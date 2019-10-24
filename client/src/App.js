@@ -5,7 +5,7 @@ import Home from "./pages/Home.js";
 import SignUp from "./pages/SignUp.js";
 import ManualLogin from "./pages/ManualLogin";
 import Dashboard from "./pages/Dashboard";
-// import RenderVector from './pages/renderVector';
+
 
 import { Helmet } from 'react-helmet';
 // import component using helmet
