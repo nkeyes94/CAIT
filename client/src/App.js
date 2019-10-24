@@ -5,6 +5,8 @@ import Home from "./pages/Home.js";
 import SignUp from "./pages/SignUp.js";
 import ManualLogin from "./pages/ManualLogin";
 import Dashboard from "./pages/Dashboard";
+// import RenderVector from './pages/renderVector';
+
 import { Helmet } from 'react-helmet';
 // import component using helmet
 import './App.css';
@@ -26,6 +28,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/manualLogin" component={ManualLogin} />
           <Route exact path="/dashboard" component={Dashboard} />
+          
         </Switch>
         {/* <Footer /> */}
       </div>

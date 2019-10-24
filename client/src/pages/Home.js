@@ -4,30 +4,31 @@ import { Link } from "react-router-dom";
 import KateCard from "../components/KateCard";
 // import Wrapper from "../components/Wrapper";
 import { Col, Row, Container } from "../components/Grid";
-import homeCards from "../homeCards.json";
+// import homeCards from "../homeCards.json";
+import RenderVector from '../components/VectorHead/renderVector'
 
 class Home extends Component {
 
-  state = {
-    homeCards
-  }
+  // state = {
+  //   homeCards
+  // }
 
   render() {
     return (
       <div>
+        <Container fluid>
+          <div>
+            <RenderVector/>
+          </div>
+
+
+        </Container>
+        
 
         <Container fluid>
 
           <Row>
-            {this.state.homeCards.map(homeCard => (
-              <Col size="md-3">
-                <KateCard
-                  id={homeCard.id}
-                  name={homeCard.name}
-                  image={homeCard.image}
-                />
-              </Col>
-            ))}
+
             <Col size="md-12">
               <div className="d-flex justify-content-center m-3">
                 <h6>Companion Artificial Intelligence Technology</h6>
