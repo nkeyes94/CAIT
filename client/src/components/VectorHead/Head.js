@@ -18,7 +18,7 @@ import { TweenLite, Power4} from "gsap/TweenMax";
 
 
 //main app
-export default class VectorHead {
+export default class Head {
   constructor() {
     this.time = 0;
     this.clock = new THREE.Clock();
@@ -31,7 +31,7 @@ export default class VectorHead {
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setPixelRatio = window.devicePixelRatio;
-    document.querySelector('.App').appendChild(this.renderer.domElement);
+    document.querySelector('.vectorHeadContainer').appendChild(this.renderer.domElement);
 
     // scene
     this.scene = new THREE.Scene();
@@ -43,7 +43,7 @@ export default class VectorHead {
     1,
     10000);
 
-    this.camera.position.set(0,0,30);
+    this.camera.position.set(0,0,65);
     // this.camera.position.set(30, 0, 30);
 
     // ambient light
@@ -103,7 +103,7 @@ export default class VectorHead {
       wireframe: false,
       depthWrite: false,
       depthTest: false,
-      opacity: .75 });
+      opacity: 1.0 });
 
 
     return new Promise((resolve, reject) => {
