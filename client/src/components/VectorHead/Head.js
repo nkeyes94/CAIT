@@ -43,7 +43,7 @@ export default class Head {
     1,
     10000);
 
-    this.camera.position.set(0,0,50);
+    this.camera.position.set(0,0,65);
     // this.camera.position.set(30, 0, 30);
 
     // ambient light
@@ -103,7 +103,7 @@ export default class Head {
       wireframe: false,
       depthWrite: false,
       depthTest: false,
-      opacity: .75 });
+      opacity: 1.0 });
 
 
     return new Promise((resolve, reject) => {
