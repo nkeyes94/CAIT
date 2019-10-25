@@ -21,6 +21,10 @@ class Dashboard extends Component {
         <Helmet>
           <script src="https://code.responsivevoice.org/responsivevoice.js?key=A2zNMwFx"></script>
           <script src="/js/voiceRecognition.js"></script>
+          <script language="javascript" src="js/creative_coding.js"></script>
+          <script language="javascript" src="js/canvas.js"></script>
+          <script language="javascript" src="js/mic.js"></script>
+          <script language="javascript" src="js/draw.js"></script>
         </Helmet>
         <Container fluid>
           <Jumbotron />
