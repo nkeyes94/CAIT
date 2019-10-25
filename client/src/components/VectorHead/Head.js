@@ -43,7 +43,7 @@ export default class Head {
     1,
     10000);
 
-    this.camera.position.set(0,0,65);
+    this.camera.position.set(0,-10,65);
     // this.camera.position.set(30, 0, 30);
 
     // ambient light

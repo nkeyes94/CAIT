@@ -52,7 +52,7 @@
             var command = e.results[last][0].transcript;    // ? Get the last result's transcript
             var userInput = command.trim().toLowerCase();   // ? Save the transcript to the global
             console.log("Voice input: " + command);         // ? Console log the transcript
-    
+            console.log(userInput);
             // * Command checking
             // * After a command is made, we should check it against our command arrays
                 // TODO: Find a more effecient way to do this
@@ -62,24 +62,20 @@
                 var selector = randomNum(greetings);                                // ? Return a randomly generated greeting
                 responsiveVoice.speak(greetings[selector]);                         // ? Issue a voice response for the greeting
                 console.log(greetings[selector]);
-            } else if(commands.includes(userInput)){                                // ? If the user command is found in the command arr
-                console.log("Found in commands");                                   // ? Log that it was found
-                var index = commands.indexOf(userInput);                            // ? Find the command's index in the arr
-                console.log(index);                                                 // ? Log the index
-                console.log(commandFunctions[index]);                               // ? Then put the index back into the array
+                                       
             } else if(command.includes("what is the weather in")){                  // ? If the user command includes a request for weather
                 getWeather(command);                                                // ? Launch the weather function (line 132)
+            } else if(command.includes("what is today's date")){                  // ? If the user command includes a request for weather
+                getDate();                                                // ? Launch the weather function (line 132)
+            } else if(command.includes("what time is it")){                  // ? If the user command includes a request for weather
+                getTime();                                                // ? Launch the weather function (line 132)
             } else if(command.includes("open")){                                    // ? If the user command has "open" in it
                 openSite(userInput);                                                // ? Launch the open external website function (Line 162)
             } else if(command.includes("show me recipes for")){                     // ? If the user command has "show me recipes for" in it
                 recipeSearch(userInput);                                            // ? Launch the recipe search function (Line 178)
-            } else if(command.includes("search for")){                              // ? If the user command has "search for" in it
-                recipeSearch(userInput);                                            // ? Launch the recipe search function (Line 178)                             
-            } else if(command.includes("show me")){                                 // ? If the user command has "show me" in it
-                recipeSearch(userInput);                                            // ? Launch the recipe search function (Line 178)                             
             } else if(command.includes("show me directions from")){                 // ? If the user command has "show me" in it
                 directions(userInput);                                              // ? Launch the recipe search function (Line 178)                             
-        }     else if(command.includes("get directions from")){                     // ? If the user command has "show me" in it
+            } else if(command.includes("get directions from")){                     // ? If the user command has "show me" in it
                 directions(userInput);                                              // ? Launch the recipe search function (Line 178)                             
             } else if(command.includes("show me the traffic for my drive to")){     // ? If the user command has "show me" in it
                 directions(userInput);                                              // ? Launch the recipe search function (Line 178)                             
@@ -134,8 +130,6 @@
             "what is the weather in",
             "open",
             "show me recipes for",
-            "search for",
-            "show me",
             "show me directions from",
             "get directions from",
             "show me the traffic for my drive to",
@@ -193,22 +187,23 @@
         // ? Then a new tab opens with the requested site
         function openSite(string){
             var n = string.split(" ");                      // ? Turn the expression into an arr
-            var lastWord = n.pop();                         // ? Pop to remove/return the last element. The last element will the website
+            // var lastWord = n.pop();
+            var lastWord = n.filter(e => e !== "open")                         // ? Pop to remove/return the last element. The last element will the website
             responsiveVoice.speak("Opening " + lastWord);   // ? Responding voice with the website to open
             console.log("Opening", lastWord);
-            window.open("http://www." + lastWord);          // ? Opening the website requested in a new tab
+            window.open("http://www." + lastWord.join().replace(/,/g, ""));          // ? Opening the website requested in a new tab
         };
     
         // * My recipe search
         function recipeSearch (string){
             var n = string.toLowerCase().split(" ");                  // ? Turn the expression into an arr and lower case
-            var lastWord = n.pop();
-            if (lastWord === "recipes"){                              // ? Pulling the word before recipes to query
-                lastWord = n.pop();
-            } 
-            responsiveVoice.speak("recipes for" + lastWord);          // ? Responding voice with the recipes to open
-            console.log("Opening ", lastWord, " Recipe");
-            window.open("https://api.edamam.com/recipes/" + lastWord); // ? for now opens recipes in a new tab
+            var x = n.indexOf("for");
+            var y = n.slice(x);
+            var recipe = y.filter(e => e !== "for");
+            console.log("recipe for ", recipe.join().replace(/,/g, (" ")));
+            responsiveVoice.speak("recipes for " + recipe.join().replace(/,/g, (" ")));          // ? Responding voice with the recipes to open
+            console.log("Opening ", recipe, " Recipe");
+            window.open("https://api.edamam.com/recipes/" + recipe.join().replace(/,/g, ("+"))); // ? for now opens recipes in a new tab
         };
     
         function directions (string) {
@@ -230,8 +225,8 @@
     
                 // * Inserting our starting and ending addresses into the URL to open a new tab with directions and traffic
     
-            window.open("https://www.google.com/maps/dir/" + start + "/" + end);
-            responsiveVoice.speak("Getting directions, and driving time from " + start.join().replace(/,/g, " ") + "to " + end.join().replace(/,/g, " "));
+            window.open("https://www.google.com/maps/dir/"+start+"/"+ end);
+            responsiveVoice.speak("Getting directions, and driving time from " + start.join().replace(/,/g, " ") + " to " + end.join().replace(/,/g, " "));
         };
     
         // * Weather function
