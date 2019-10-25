@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 // import Button from "../components/Button";
-import KateCard from "../components/KateCard";
+// import KateCard from "../components/KateCard";
 // import Wrapper from "../components/Wrapper";
 import { Col, Row, Container } from "../components/Grid";
 // import homeCards from "../homeCards.json";
-import VectorHead from '../components/VectorHead/VectorHead';
+// import VectorHead from '../components/VectorHead/VectorHead';
 import Head from '../components/VectorHead/Head';
 
 class Home extends Component {
@@ -13,15 +13,11 @@ class Home extends Component {
     var head = new Head();
   }
 
-  // state = {
-  //   homeCards
-  // }
-
+  
   render() {
     return (
       <div>
         <div className= "vectorHeadContainer">
-          {/* <VectorHead /> */}
         </div>
 
           <Container fluid>

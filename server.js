@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use(express.static("public"))
-
+// app.use(express.static("webCamFaceRecog"))
 // * CORs config
 app.use(cors());
 
