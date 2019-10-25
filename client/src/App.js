@@ -17,9 +17,8 @@ function App() {
       <div className="App">
         {/* insert script file needed below */}
         <Helmet>
-          <script src="">
-
-          </script>
+          <script src="https://code.responsivevoice.org/responsivevoice.js?key=A2zNMwFx"></script>
+          <script src="/js/voiceRecognition.js"></script>
         </Helmet>
         {/* <Navbar /> */}
         <Switch>

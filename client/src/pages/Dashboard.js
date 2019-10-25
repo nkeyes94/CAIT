@@ -19,22 +19,11 @@ class Dashboard extends Component {
         <Container fluid>
           <Jumbotron />
           <div id="voiceJumbo" className="jumbotron" />
-          <Row>
-
-            <Col size="md-12 d-flex">
-              <div className="d-flex justify-content-center m-3">
-                <form className="">
-                  <Input name="email" placeholder="Search words here" />
-                </form>
-              </div>
-
-            </Col>
-          </Row>
 
           <Row>
             <div className="mx-auto p-4">
               <Col size="md-12">
-                <Link className="btn btn-success" to="/">Home</Link>
+                <button id="thisButton" className="btn btn-success" to="/">Click And Speak Your Command</button>
               </Col>
             </div>
           </Row>
