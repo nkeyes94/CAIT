@@ -4,8 +4,8 @@ $(document).ready(function() {
   })
   
   async function run1() {
-
-    const MODELS = "/";
+    console.log("PUB FOLDER")
+    const MODELS = "./webCamFaceRecog/weights";
   
       await faceapi.loadSsdMobilenetv1Model(MODELS)
       await faceapi.loadFaceLandmarkModel(MODELS)

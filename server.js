@@ -1,53 +1,58 @@
+// * Importing required packages
 const express = require("express");
-var session = require("express-session");
-
-
+const session = require("express-session");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+const cors = require("cors");
+const path = require("path");
+const { get } = require("request");
 
-// const path = require("path");
-// const axios = require("axios");
-
-var passport = require("./config/passport");
-// var faceapi = require("face-api.js");
-var cors = require("cors");
-
+// * App & Port config
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Define middleware here
-app.use(express.urlencoded({
-  extended: true
-}));
-app.use(express.json());
-// Serve up static assets (usually on heroku)
+// * Middleware config
+  // ? Express config
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true}));
+  // ? CORs config
+  app.use(cors());
+
+// * Router config
+// const routes = require("./routes")(app);
+
+// * Server config cont.
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+// * Serving up our static content
 app.use(express.static("public"))
-// app.use(express.static("webCamFaceRecog"))
-// * CORs config
-app.use(cors());
 
-// * Passport config
-app.use(session({ secret: "the blue dog jumps over the red moon", resave: true, saveUninitialized: true }));
-app.use(passport.initialize());
-app.use(passport.session());
+// * Attempt at correcting the faceAPI shit
+app.use(express.static(path.join(__dirname, "/public/webCamFaceRecog")));
 
-// Add routes, both API and view
-app.use(routes);
 
-// Connect to the Mongo DB
+// * Establishing connection with MongoDB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/heroku_tmwk490b");
 
-//mlab
-// mongodb:
-//<jessica>:<cobain1989>@ds333238.mlab.com:33238/heroku_tmwk490b
-
-// Start the API server
+// * Server listener
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
 
 module.exports = app;
+
+// ******************* Commented out code removed & posted below this line
+// const axios = require("axios");
+// var passport = require("./config/passport");
+// var faceapi = require("face-api.js");
+
+//mlab
+// mongodb:
+//<jessica>:<cobain1989>@ds333238.mlab.com:33238/heroku_tmwk490b
+
+// ! Placing this down here, as we don't have PP configured yet
+// * Passport config
+// app.use(session({ secret: "the blue dog jumps over the red moon", resave: true, saveUninitialized: true }));
+// app.use(passport.initialize());
+// app.use(passport.session());

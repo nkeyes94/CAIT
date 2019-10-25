@@ -6,7 +6,7 @@
     //                                          ***********************
 
     $(document).ready(function(){
-
+        console.log("PUB FOLDER");
         // * Selecting our run button.
         $runBtn = $("#thisButton");
         
