@@ -1,6 +1,6 @@
 $(document).ready(function() {
-     
-    run1()
+     console.log("Document ready");
+     run1()
   })
   
   async function run1() {
@@ -10,7 +10,8 @@ $(document).ready(function() {
       await faceapi.loadSsdMobilenetv1Model(MODELS)
       await faceapi.loadFaceLandmarkModel(MODELS)
       await faceapi.loadFaceRecognitionModel(MODELS)
-      
+      console.log(faceapi);
+      console.log("Weights loaded");
   
   // try to access users webcam and stream the images
     // to the video element
@@ -23,16 +24,15 @@ $(document).ready(function() {
   }
   
   async function run2() {
-      
   const mtcnnResults = await faceapi.ssdMobilenetv1(document.getElementById('inputVideo'))
   
   overlay.width = 500
   overlay.height = 400
   const detectionsForSize = mtcnnResults.map(det => det.forSize(500, 400))
 
-  console.log(Object.keys(faceapi.draw))
+  // console.log(Object.keys(faceapi.draw))
   
-  faceapi.draw.drawDetections(overlay, detectionsForSize, { withScore: true })    
+  // faceapi.draw.drawDetections(overlay, detectionsForSize, { withScore: true })    
   
   
   const input = document.getElementById('inputVideo')
@@ -44,7 +44,7 @@ $(document).ready(function() {
   const labeledFaceDescriptors = await Promise.all(
     labels.map(async label => {
       // fetch image data from urls and convert blob to HTMLImage element
-      const imgUrl = `Nathan/${label}.png`
+      const imgUrl = `images/Nathan/${label}.png`
       const img = await faceapi.fetchImage(imgUrl)
       
       // detect the face with the highest score in the image and compute it's landmarks and face descriptor
@@ -85,3 +85,6 @@ $(document).ready(function() {
       run2()
       setTimeout(() => onPlay(videoEl))
   } 
+
+  var testMeDad = document.getElementById("inputVideo");
+  testMeDad.onplay(onPlay(testMeDad));
