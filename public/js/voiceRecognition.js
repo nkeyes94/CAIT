@@ -224,8 +224,8 @@
     
                 // * Inserting our starting and ending addresses into the URL to open a new tab with directions and traffic
     
-            window.open("https://www.google.com/maps/dir/" + start + "/" + end);
-            responsiveVoice.speak("Getting directions, and driving time from " + start.join().replace(/,/g, " ") + "to " + end.join().replace(/,/g, " "));
+            window.open("https://www.google.com/maps/dir/"+start+"/"+ end);
+            responsiveVoice.speak("Getting directions, and driving time from " + start.join().replace(/,/g, " ") + " to " + end.join().replace(/,/g, " "));
         };
     
         // * Weather function
