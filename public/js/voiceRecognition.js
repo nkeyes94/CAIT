@@ -168,7 +168,7 @@
         function getTime(){
             var today = new Date();
             var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            responsiveVoice.speak("The current time is "+ time + " seconds");
+            responsiveVoice.speak("The current time is "+ time);
             return time;
         }
     
@@ -187,10 +187,11 @@
         // ? Then a new tab opens with the requested site
         function openSite(string){
             var n = string.split(" ");                      // ? Turn the expression into an arr
-            var lastWord = n.pop();                         // ? Pop to remove/return the last element. The last element will the website
+            // var lastWord = n.pop();
+            var lastWord = n.filter(e => e !== "open")                         // ? Pop to remove/return the last element. The last element will the website
             responsiveVoice.speak("Opening " + lastWord);   // ? Responding voice with the website to open
             console.log("Opening", lastWord);
-            window.open("http://www." + lastWord);          // ? Opening the website requested in a new tab
+            window.open("http://www." + lastWord.join().replace(/,/g, ""));          // ? Opening the website requested in a new tab
         };
     
         // * My recipe search
