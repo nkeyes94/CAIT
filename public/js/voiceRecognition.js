@@ -73,13 +73,9 @@
                 openSite(userInput);                                                // ? Launch the open external website function (Line 162)
             } else if(command.includes("show me recipes for")){                     // ? If the user command has "show me recipes for" in it
                 recipeSearch(userInput);                                            // ? Launch the recipe search function (Line 178)
-            } else if(command.includes("search for")){                              // ? If the user command has "search for" in it
-                recipeSearch(userInput);                                            // ? Launch the recipe search function (Line 178)                             
-            } else if(command.includes("show me")){                                 // ? If the user command has "show me" in it
-                recipeSearch(userInput);                                            // ? Launch the recipe search function (Line 178)                             
             } else if(command.includes("show me directions from")){                 // ? If the user command has "show me" in it
                 directions(userInput);                                              // ? Launch the recipe search function (Line 178)                             
-        }     else if(command.includes("get directions from")){                     // ? If the user command has "show me" in it
+            } else if(command.includes("get directions from")){                     // ? If the user command has "show me" in it
                 directions(userInput);                                              // ? Launch the recipe search function (Line 178)                             
             } else if(command.includes("show me the traffic for my drive to")){     // ? If the user command has "show me" in it
                 directions(userInput);                                              // ? Launch the recipe search function (Line 178)                             
@@ -134,8 +130,6 @@
             "what is the weather in",
             "open",
             "show me recipes for",
-            "search for",
-            "show me",
             "show me directions from",
             "get directions from",
             "show me the traffic for my drive to",
@@ -174,7 +168,7 @@
         function getTime(){
             var today = new Date();
             var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            responsiveVoice.speak("The current time is "+ time);
+            responsiveVoice.speak("The current time is "+ time + " seconds");
             return time;
         }
     
@@ -202,13 +196,13 @@
         // * My recipe search
         function recipeSearch (string){
             var n = string.toLowerCase().split(" ");                  // ? Turn the expression into an arr and lower case
-            var lastWord = n.pop();
-            if (lastWord === "recipes"){                              // ? Pulling the word before recipes to query
-                lastWord = n.pop();
-            } 
-            responsiveVoice.speak("recipes for" + lastWord);          // ? Responding voice with the recipes to open
-            console.log("Opening ", lastWord, " Recipe");
-            window.open("https://api.edamam.com/recipes/" + lastWord); // ? for now opens recipes in a new tab
+            var x = n.indexOf("for");
+            var y = n.slice(x);
+            var recipe = y.filter(e => e !== "for");
+            console.log("recipe for ", recipe.join().replace(/,/g, (" ")));
+            responsiveVoice.speak("recipes for " + recipe.join().replace(/,/g, (" ")));          // ? Responding voice with the recipes to open
+            console.log("Opening ", recipe, " Recipe");
+            window.open("https://api.edamam.com/recipes/" + recipe.join().replace(/,/g, ("+"))); // ? for now opens recipes in a new tab
         };
     
         function directions (string) {
