@@ -1,6 +1,7 @@
 const express = require("express");
 var session = require("express-session");
 
+
 const mongoose = require("mongoose");
 const routes = require("./routes");
 
@@ -23,6 +24,8 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+app.use(express.static("public"))
 
 // * CORs config
 app.use(cors());
