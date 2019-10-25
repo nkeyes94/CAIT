@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 // import audioImg from "../audioImg.json";
 import "./Dashboard.css"
+import { Helmet } from 'react-helmet';
+
 
 
 class Dashboard extends Component {
@@ -16,6 +18,10 @@ class Dashboard extends Component {
     return (
 
       <div>
+        <Helmet>
+          <script src="https://code.responsivevoice.org/responsivevoice.js?key=A2zNMwFx"></script>
+          <script src="/js/voiceRecognition.js"></script>
+        </Helmet>
         <Container fluid>
           <Jumbotron />
           <div id="voiceJumbo" className="jumbotron" />

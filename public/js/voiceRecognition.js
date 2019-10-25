@@ -52,7 +52,7 @@
             var command = e.results[last][0].transcript;    // ? Get the last result's transcript
             var userInput = command.trim().toLowerCase();   // ? Save the transcript to the global
             console.log("Voice input: " + command);         // ? Console log the transcript
-    
+            console.log(userInput);
             // * Command checking
             // * After a command is made, we should check it against our command arrays
                 // TODO: Find a more effecient way to do this
@@ -62,13 +62,13 @@
                 var selector = randomNum(greetings);                                // ? Return a randomly generated greeting
                 responsiveVoice.speak(greetings[selector]);                         // ? Issue a voice response for the greeting
                 console.log(greetings[selector]);
-            } else if(commands.includes(userInput)){                                // ? If the user command is found in the command arr
-                console.log("Found in commands");                                   // ? Log that it was found
-                var index = commands.indexOf(userInput);                            // ? Find the command's index in the arr
-                console.log(index);                                                 // ? Log the index
-                console.log(commandFunctions[index]);                               // ? Then put the index back into the array
+                                       
             } else if(command.includes("what is the weather in")){                  // ? If the user command includes a request for weather
                 getWeather(command);                                                // ? Launch the weather function (line 132)
+            } else if(command.includes("what is today's date")){                  // ? If the user command includes a request for weather
+                getDate();                                                // ? Launch the weather function (line 132)
+            } else if(command.includes("what time is it")){                  // ? If the user command includes a request for weather
+                getTime();                                                // ? Launch the weather function (line 132)
             } else if(command.includes("open")){                                    // ? If the user command has "open" in it
                 openSite(userInput);                                                // ? Launch the open external website function (Line 162)
             } else if(command.includes("show me recipes for")){                     // ? If the user command has "show me recipes for" in it
