@@ -1,5 +1,4 @@
 var ctx = createCanvas("canvas1");
-
 var num_items = 200;
 var radius = 80;
 ctx.lineWidth = 2;
@@ -35,7 +34,6 @@ function draw(){
     x2 = w/2 + Math.cos(p.angle) * (s + radius);
 		y2 = h/2 + Math.sin(p.angle) * (s + radius);
     ctx.line(p.x, p.y, x2, y2);
-
   }
 
 }

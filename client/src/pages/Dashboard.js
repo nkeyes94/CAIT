@@ -33,7 +33,7 @@ class Dashboard extends Component {
           <Row>
             <div className="mx-auto p-4">
               <Col size="md-12">
-                <button id="thisButton" className="btn btn-success" to="/">Click And Speak Your Command</button>
+                <button id="thisButton" style={{zIndex:2}} className="btn btn-success" to="/">Click And Speak Your Command</button>
               </Col>
             </div>
           </Row>
