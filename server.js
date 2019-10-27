@@ -17,13 +17,16 @@ const PORT = process.env.PORT || 3001;
   // ? CORs config
   app.use(cors());
 
-// * Router config
-// const routes = require("./routes")(app);
+// * Custom API Router config for todo list
+const routes = require("./routes");
 
 // * Server config cont.
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+// Add routes, both API and view
+app.use(routes);
 
 // * Serving up our static content
 app.use(express.static("public"))
@@ -46,6 +49,12 @@ module.exports = app;
 // const axios = require("axios");
 // var passport = require("./config/passport");
 // var faceapi = require("face-api.js");
+
+// $ heroku config
+// === calm-woodland-49321 Config Vars
+// MONGODB_URI: mongodb://heroku_tmwk490b:urd1rji0j9392e0748uf710hc7@ds333238.mlab.com:33238/heroku_tmwk490b
+
+
 
 //mlab
 // mongodb:
