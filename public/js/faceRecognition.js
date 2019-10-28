@@ -5,8 +5,16 @@
 
 // * Document ready function
 $(document).ready(function(){
-    loadModels();
+    faceapi.onload = function() { loadModels() }
+    loadModels().then(function(){
+        var inVid = document.getElementById("inputVideo");
+        onPlay(inVid);
+    })
 });
+
+var ssdLoaded = false;
+var landMarkLoaded = false;
+var recognitionLoaded = false;
 
 // * Grabbing the video element
 var videoEl = document.getElementById("inputVideo");
@@ -16,9 +24,18 @@ async function loadModels(){
     const models = "./webCamFaceRecog/weights";
     console.log("Loading models from " + models);
 
-    await faceapi.loadSsdMobilenetv1Model(models);
-    await faceapi.loadFaceLandmarkModel(models);
-    await faceapi.loadFaceRecognitionModel(models);
+    await faceapi.loadSsdMobilenetv1Model(models).then(function(){
+        ssdLoaded = true;
+        console.log("SSD Loaded");
+    })
+    await faceapi.loadFaceLandmarkModel(models).then(function(){
+        landMarkLoaded = true;
+        console.log("Landmark model loaded")
+    })
+    await faceapi.loadFaceRecognitionModel(models).then(function(){
+        recognitionLoaded = true;
+        console.log("Recognition model loaded")
+    })
 
     navigator.getUserMedia(
         { video:{} },
@@ -82,7 +99,4 @@ async function run() {
 async function onPlay(videoEl){
     run();
     setTimeout(() => onPlay(videoEl));
-}
-
-var testMeDad = document.getElementById("inputVideo");
-testMeDad.onplay(onPlay(testMeDad));
+};
