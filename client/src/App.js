@@ -10,7 +10,7 @@ import SignUpByEmail from "./pages/SignUpByEmail";
 import Registration from "./pages/Registration.js";
 import SignIn from "./pages/SignIn.js";
 import FaceRecognition from "./pages/FaceRecognition.js";
-import TodoPage from "./pages/TodoPage.js";
+import TodoPage from "./pages/TodoPage/";
 
 
 // import { Helmet } from 'react-helmet';
