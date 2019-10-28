@@ -19,12 +19,12 @@ class Dashboard extends Component {
 
       <div>
         <Helmet>
-          <script src="https://code.responsivevoice.org/responsivevoice.js?key=A2zNMwFx"></script>
-          <script src="/js/voiceRecognition.js"></script>
-          <script language="javascript" src="js/creative_coding.js"></script>
-          <script language="javascript" src="js/canvas.js"></script>
-          <script language="javascript" src="js/mic.js"></script>
-          <script language="javascript" src="js/draw.js"></script>
+          <script crossorigin src="https://cors-anywhere.herokuapp.com/https://code.responsivevoice.org/responsivevoice.js?key=A2zNMwFx"></script>
+          <script crossorigin src="/js/voiceRecognition.js"></script>
+          <script language="javascript" crossorigin src="js/creative_coding.js"></script>
+          <script language="javascript" crossorigin src="js/canvas.js"></script>
+          <script language="javascript" crossorigin src="js/mic.js"></script>
+          <script language="javascript" crossorigin src="js/draw.js"></script>
         </Helmet>
         <Container fluid>
           <Jumbotron />
@@ -33,7 +33,7 @@ class Dashboard extends Component {
           <Row>
             <div className="mx-auto p-4">
               <Col size="md-12">
-                <button id="thisButton" style={{zIndex:2}} className="btn btn-success" to="/">Click And Speak Your Command</button>
+                <button id="thisButton" style={{zIndex:2}} className="btn btn-success">Click And Speak Your Command</button>
               </Col>
             </div>
           </Row>
