@@ -1,12 +1,6 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
-// import Button from "../components/Button";
 import Jumbotron from "../components/Jumbotron";
-// import { Input, FormBtn } from "../components/Form";
-// import { Link } from "react-router-dom";
-// import VoiceBackground from "../components/VoiceBackground";
 import { Col, Row, Container } from "../components/Grid";
-// import audioImg from "../audioImg.json";
 import "./Dashboard.css"
 import { Helmet } from 'react-helmet';
 
@@ -16,7 +10,6 @@ class Dashboard extends Component {
 
   render() {
     return (
-
       <div>
         <Helmet>
           <script src="/js/voiceRecognition.js"></script>
