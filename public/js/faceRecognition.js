@@ -5,7 +5,6 @@
 
 // * Document ready function
 $(document).ready(function(){
-    faceapi.onload = function() { loadModels() }
     loadModels().then(function(){
         if(ssdLoaded == true &&
             landMarkLoaded== true &&
