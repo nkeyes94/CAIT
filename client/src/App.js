@@ -4,6 +4,7 @@ import Login from "./pages/Login.js";
 import Home from "./pages/Home.js";
 import SignUp from "./pages/SignUp.js";
 import Dashboard from "./pages/Dashboard";
+import SignUpByEmail from './pages/SignUpByEmail'
 
 //Blank Pages
 import Registration from "./pages/Registration.js";
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/signupbyemail" component={SignUpByEmail} />
           {/* Routes to Blank Pages */}
           <Route exact path="/registration" component={Registration} />
           <Route exact path="/signin" component={SignIn} />
