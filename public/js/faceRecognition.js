@@ -7,8 +7,6 @@
 $(document).ready(function(){
     faceapi.onload = function() { loadModels() }
     loadModels().then(function(){
-        // var inVid = document.getElementById("inputVideo");
-        // onPlay(inVid);
         if(ssdLoaded == true &&
             landMarkLoaded== true &&
             recognitionLoaded == true){
