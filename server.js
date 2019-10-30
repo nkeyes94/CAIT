@@ -6,6 +6,7 @@ const path = require("path");
 const { get } = require("request");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
+const mongoose = require("mongoose");
 
 // Setting up port and requiring models for syncing
 var db = require("./models");
@@ -25,7 +26,14 @@ const PORT = process.env.PORT || 3001;
   app.use(passport.initialize());
   app.use(passport.session());
 
+  // * Establishing connection with MongoDB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/heroku_tmwk490b");
   
+  // * Custom API Router config for todo list
+const routes = require("./routes");
+
+// Add routes, both API and view
+app.use(routes);
   
   // * Server config cont.
   if (process.env.NODE_ENV === "production") {
