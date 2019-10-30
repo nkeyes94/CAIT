@@ -33,7 +33,6 @@ function App() {
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/facerecognition" component={FaceRecognition} />
           <Route exact path="/todopage" component={TodoPage} />
-
         </Switch>
    
       </div>
