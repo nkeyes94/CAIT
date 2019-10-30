@@ -2,8 +2,6 @@
 const express = require("express");
 const session = require("express-session");
 const cors = require("cors");
-const path = require("path");
-const { get } = require("request");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 const mongoose = require("mongoose");
@@ -34,22 +32,22 @@ const routes = require("./routes");
 
 // Add routes, both API and view
 app.use(routes);
-  
-  // * Server config cont.
-  if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
-  }
-  
-  // * Serving up our static content
-  app.use(express.static("public"))
-  
-  // * Attempt at correcting the faceAPI shit
-  // app.use(express.static(path.join(__dirname, "/public/webCamFaceRecog")));
-  
-  // * Router config
-  // Requiring our routes
-  require("./routes/html-routes.js")(app);
-  require("./routes/api-routes.js")(app);
+
+// * Server config cont.
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
+// * Serving up our static content
+app.use(express.static("./public"))
+
+// * Attempt at correcting the faceAPI shit
+// app.use(express.static(path.join(__dirname, "/public/webCamFaceRecog")));
+
+// * Router config
+// Requiring our routes
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
   // * Server listener
 db.sequelize.sync().then(function() {

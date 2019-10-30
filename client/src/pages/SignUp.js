@@ -7,8 +7,29 @@ import Jumbotron from "../components/Jumbotron";
 import FaceVideo from "../components/FaceVideo"
 import { Helmet } from "react-helmet"
 
+import { validateRegister } from '../utils'
+
 
 class SignUp extends Component {
+  
+  state = {}
+  
+  handleInput = (e) => {
+    const { name, value } = e.target
+    this.setState({
+      [name]: value
+    })
+  }
+  
+  handleSubmit = (e) => {
+    e.preventDefault()
+    const validation = validateRegister(this.state)
+    if (!validation.isValid) {
+      alert(validation.message)
+      return
+    }
+    this.props.signUpUser(this.state)
+  }
 
   render() {
     return (
@@ -39,17 +60,17 @@ class SignUp extends Component {
                   </Col>
                   <div className="mx-auto pt-5 pb-4">
                     <Col size="md-12" className="mt-5">
-                      <form className="">
-                        <Input name="first-name" placeholder="First Name (required)" />
-                        <Input name="last-name" placeholder="Last Name (required)" />
-                        <Input name="email" placeholder="Email (required)" />
-                        <Input name="password" placeholder="Password (required)" />
-                        <Input name="confirm-password" placeholder="Confirm Password (required)" />
+                      <form onSubmit={this.handleSubmit}>
+                        <Input name="firstName" onChange={this.handleInput} placeholder="First Name (required)" />
+                        <Input name="lastName" onChange={this.handleInput} placeholder="Last Name (required)" />
+                        <Input name="email" onChange={this.handleInput} placeholder="Email (required)" />
+                        <Input name="password" type='password' onChange={this.handleInput} placeholder="Password (required)" />
+                        <Input name="confirmPassword" type='password' onChange={this.handleInput}placeholder="Confirm Password (required)" />
 
                         <Row>
                           <div className="mx-auto p-4">
                             <Col size="md-12">
-                              <Link className="btn btn-success" to="/">Register</Link>
+                              <input className="btn btn-success" type='submit' name='submit' value='Register'/>
                             </Col>
                           </div>
                         </Row>

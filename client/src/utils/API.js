@@ -16,5 +16,9 @@ export default {
   // Saves a todo to the database
   saveToDo: function(todoData) {
     return axios.post("/api/todos", todoData);
+  },
+  
+  registerUser: function(creds) {
+    return axios.post("/api/signup", creds)
   }
 };
