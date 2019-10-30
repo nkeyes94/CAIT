@@ -14,7 +14,7 @@ $(document).ready(function(){
                 setTimeout(onPlay(inVid), 3000)
             }
     })
-});
+})
 
 var ssdLoaded = false;
 var landMarkLoaded = false;
@@ -51,8 +51,6 @@ async function loadModels(){
 // * Function for facial recognition
 async function run() {
     const mtcnnResults = await faceapi.ssdMobilenetv1(videoEl);
-    overlay.width = 680;
-    overlay.height = 480;
     const detectionsForSize = mtcnnResults.map(det => det.forSize(680, 480));
 
     const fullFaceDescriptions = await faceapi
