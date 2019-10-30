@@ -12,19 +12,33 @@ import SignIn from "./pages/SignIn.js";
 import FaceRecognition from "./pages/FaceRecognition.js";
 import TodoPage from "./pages/TodoPage.js";
 
+import API from "./utils/API";
+
 
 // import { Helmet } from 'react-helmet';
 // import component using helmet
 import './App.css';
 
 function App() {
+  const signUpUser = async (credentials) => {
+    try {
+      const response = await API.registerUser(credentials)
+      console.log(response)
+    } catch (err) {
+    
+    }
+  }
   return (
     <Router>
       <div className="App">
        
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/signup" render = {(props) =>
+            <SignUp
+              {...props} signUpUser={signUpUser}
+            />
+          }/>
           <Route exact path="/login" component={Login} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/signupbyemail" component={SignUpByEmail} />
