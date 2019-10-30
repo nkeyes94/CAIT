@@ -25,7 +25,7 @@ class SignUp extends Component {
                     <Row>
                         <div className = "mx-auto pb-5">
                         <Col size="md-12">
-
+                            
                         </Col>
                         </div>
                     </Row>
