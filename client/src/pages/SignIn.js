@@ -10,7 +10,7 @@ class SignUp extends Component {
                 <Container>
                     <Row>
                         <Col size="md-12">
-
+                            
                         </Col>
                     </Row>
                 </Container>

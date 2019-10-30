@@ -143,8 +143,8 @@
     
         // * The correlating functions for the previous commands arr
         const commandFunctions = [
-            getTime(),                                                    // ? Function to get the time (Line 116)
-            getDate(),                                                    // ? Function to get the date (Line 123)
+            // getTime(),                                                    // ? Function to get the time (Line 116)
+            // getDate(),                                                    // ? Function to get the date (Line 123)
             openSite(),                                                   // ? Function to open an external website (Line 162)
             recipeSearch(),                                               // ? Function to search recipes (Line 178)
             directions(),                                                 // ? Function to get directions (Line 209)
@@ -175,7 +175,7 @@
         // * Simple function for getting the date.
         function getDate(){
             var today = new Date();
-            var date = today.getMonth() + "-" + today.getDate() + "-" + today.getFullYear();
+            var date = (today.getMonth()+1) + "-" + today.getDate() + "-" + today.getFullYear();
             responsiveVoice.speak("Todays date is "+ date);
             return date;
         };
