@@ -24,22 +24,22 @@ class Home extends Component {
             <Row>
               <Col size="md-12">
                 <div className="d-flex justify-content-center">
-                  <Link to="/login"><a href="#" className="text-success mt-3">Login</a></Link>
+                  <Link to="/login"><a href="/#" className="text-success mt-3">Login</a></Link>
                 </div>
               </Col>
               <Col size="md-12">
                 <div className="d-flex justify-content-center">
-                  <Link to="/signup"><a href="#" className="text-success mb-3">Sign Up</a></Link>
+                  <Link to="/signup"><a href="/#" className="text-success mb-3">Sign Up</a></Link>
                 </div>
               </Col>
             </Row>
             <Row>
               <Col size="md-12">
                 <div className="d-flex justify-content-center my-3">
-                  <a href="#" className="text-secondary pr-2"> Nathan Keyes </a> |
-                  <a href="#" className="text-secondary px-2"> Frederick Carnes </a> |
-                  <a href="#" className="text-secondary px-2"> Jessica Hunt </a> |
-                  <a href="#" className="text-secondary pl-2"> Mark Warness </a>
+                  <a href="/#" className="text-secondary pr-2"> Nathan Keyes </a> |
+                  <a href="/#" className="text-secondary px-2"> Frederick Carnes </a> |
+                  <a href="/#" className="text-secondary px-2"> Jessica Hunt </a> |
+                  <a href="/#" className="text-secondary pl-2"> Mark Warness </a>
                 </div>
               </Col>
             </Row>

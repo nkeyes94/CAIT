@@ -1,10 +1,9 @@
 import React from "react";
 
-function FaceVideo(props) {
+function FaceVideo () {
   return (
     <div id="displayVideo">
-      <video className="border border-success" id="inputVideo" autoPlay muted  width={640} height={480}></video>
-      <canvas className="border border-success" id="overlay" width={640} height={480} ></canvas>
+      <video className="border border-success" id="inputVideo" autoPlay muted  width={640} height={480}/>
     </div>
   );
 }

@@ -1,12 +1,10 @@
-// import Video from "../components/Video";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Button from "../components/Button";
 import Jumbotron from "../components/Jumbotron";
 import FaceVideo from "../components/FaceVideo"
-// import ReactPlayer from 'react-player';
-import { Input, FormBtn } from "../components/Form";
+import { Input } from "../components/Form";
 import {Helmet} from "react-helmet";
 
 class Login extends Component {
@@ -15,10 +13,10 @@ class Login extends Component {
     return (
       <div>
         <Helmet>
-          <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-          <script src="/js/face-api.js"></script>
-          <script defer type="text/javascript" src="js/faceRecognition.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+          <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"/>
+          <script src="/js/face-api.js"/>
+          <script defer type="text/javascript" src="js/faceRecognition.js"/>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"/>
         </Helmet>
         <Container fluid>
           <Jumbotron />
@@ -43,9 +41,7 @@ class Login extends Component {
                     </Col>
                   </div>
                   <Col size="md-12">
-                    {/* <ReactPlayer className="border border-success mb-5 w-100">
-                    </ReactPlayer> */}
-                    <FaceVideo></FaceVideo>
+                    <FaceVideo/>
                   </Col>
                 </Row>
               </div>
